@@ -4,20 +4,23 @@ using System.Text;
 
 namespace EpamAutoPark
 {
-    class Engine //"Двигатель"(включает в себя поля мощность, объем, тип, серийный номер),
+    class Engine //"Двигатель"(поля мощность, объем, тип, серийный номер)
     {
-        public int power;
-        public double volume;
-        public string type = "None";
-        public string numberEngine = "None";
+        int power;
+        double volume;
+        string type = "None";
+        string numberEngine = "None";
 
-        public Engine(int pow, double vol, string typ, string num)
+        public Engine(int power, double volume, string type, string numberEngine)
         {
-            power = pow; volume = vol; type = typ; numberEngine = num;
+            this.power = power;
+            this.volume = volume;
+            this.type = type;
+            this.numberEngine = numberEngine;
         }
         public void PrintEngine()
         {
-            Console.WriteLine($"Engine INFO:\t   *Power*: {power}\t *Volume*: {volume}\t *Type*: {type}\t *Serial Number*: {numberEngine}\t");
+            Console.WriteLine($"Engine INFO:\t   *Power*: {power}\t\t *Volume*: {volume}\t\t *Type*: {type}\t *Serial Number*: {numberEngine}\t");
         }
     }
 }

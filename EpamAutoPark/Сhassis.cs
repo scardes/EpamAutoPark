@@ -6,17 +6,19 @@ namespace EpamAutoPark
 {
     class Сhassis //"Шасси"(количество колес, номер, допустимая нагрузка)
     {
-        public int wheel;
-        public string numberChassis = "None";
-        public double load;
+        int wheel;
+        double load;
+        string numberChassis = "None";
 
-        public Сhassis(int whe, string num, double loa)
+        public Сhassis(int wheel, string numberChassis, double load)
         {
-            wheel = whe; numberChassis = num; load = loa;
+            this.wheel = wheel;
+            this.numberChassis = numberChassis; 
+            this.load = load;
         }
         public void PrintСhassis()
         {
-            Console.WriteLine($"Сhassis INFO:\t   *Wheel*: {wheel}\t *Number*: {numberChassis}\t *Load*: {load}\t");
+            Console.WriteLine($"Сhassis INFO:\t   *Wheel*: {wheel}\t\t *Number*: {numberChassis}\t *Load*: {load}\t");
         }
     }
 }

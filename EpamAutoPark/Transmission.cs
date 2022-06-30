@@ -4,15 +4,17 @@ using System.Text;
 
 namespace EpamAutoPark
 {
-    class Transmission //"Трансмиссия" (тип, количество передач, производитель).
+    class Transmission //"Трансмиссия" (тип, количество передач, производитель)
     {
-        string type = "None";
         int gear;
+        string type = "None";
         string manufacturer = "";
-
-        public Transmission(string ty, int ge, string man)
+        
+        public Transmission(string type, int gear, string manufacturer)
         {
-            type = ty; gear = ge; manufacturer = man;
+            this.type = type; 
+            this.gear = gear; 
+            this.manufacturer = manufacturer;
         }
         public void PrintTransmission()
         {
