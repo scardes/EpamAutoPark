@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
+/// <summary>
+/// Engine has field like power, volume, type of engine and his serialNumber
+/// </summary>
 namespace EpamAutoPark
 {
-    class Engine //"Двигатель"(поля мощность, объем, тип, серийный номер)
+    class Engine
     {
         int power;
         double volume;
@@ -18,6 +21,8 @@ namespace EpamAutoPark
             this.type = type;
             this.numberEngine = numberEngine;
         }
+
+        // Print information about engine
         public void PrintEngine()
         {
             Console.WriteLine($"Engine INFO:\t   *Power*: {power}\t\t *Volume*: {volume}\t\t *Type*: {type}\t *Serial Number*: {numberEngine}\t");
