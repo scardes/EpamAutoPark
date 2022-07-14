@@ -9,17 +9,10 @@ namespace EpamAutoPark
 {
     class Сhassis 
     {
-        int wheel;
-        double load;
-        string numberChassis = "None";
-
-        public Сhassis(int wheel, string numberChassis, double load)
-        {
-            this.wheel = wheel;
-            this.numberChassis = numberChassis; 
-            this.load = load;
-        }
-
+        public int wheel { get; set; }
+        public double load { get; set; }
+        public string numberChassis { get; set; }
+              
         // Print information about chassis
         public void PrintСhassis()
         {

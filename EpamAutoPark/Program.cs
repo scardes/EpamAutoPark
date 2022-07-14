@@ -12,16 +12,14 @@ namespace EpamAutoPark
         static void Main(string[] args)
         {
             // CAR information
-            Engine carEngine = new Engine() { power = 800, volume = 4.5, type = "SportCar", numberEngine = "AS888SS" };
-            Сhassis carChassis = new Сhassis(4, "CH18951", 2000);
-            Transmission carTransmission = new Transmission("Manual", 6, "AUDI");
+            //Engine carEngine = new Engine() { power = 800, volume = 4.5, type = "SportCar", numberEngine = "AS888SS" };
+            //Сhassis carChassis = new Сhassis() { wheel = 4, numberChassis = "CH18951", load = 2000 };
+            //Transmission carTransmission = new Transmission() { type = "Manual", gear = 6, manufacturer = "AUDI" };
 
-            Console.WriteLine("Car INFO:\n");
-            carEngine.PrintEngine();
-            carChassis.PrintСhassis();
-            carTransmission.PrintTransmission();
-
-            Console.WriteLine("\nEngine List:\n");
+            //Console.WriteLine("Car INFO:\n");
+            //carEngine.PrintEngine();
+            //carChassis.PrintСhassis();
+            //carTransmission.PrintTransmission();
 
             var theEngines = new List<Engine>()
                 {
@@ -50,12 +48,51 @@ namespace EpamAutoPark
                     new Engine() { power = 700, volume = 9, type = "Scooter_Honda", numberEngine = "Scooter_090"}
                 };
 
+            var theChassises = new List<Сhassis>()
+                {
+                    new Сhassis() { wheel = 4, numberChassis = "CH18951", load = 2000},
+                    new Сhassis() { wheel = 4, numberChassis = "CH18951", load = 2000},
+                    new Сhassis() { wheel = 4, numberChassis = "CH18951", load = 2000},
+                    new Сhassis() { wheel = 4, numberChassis = "CH18951", load = 2000},
+                    new Сhassis() { wheel = 4, numberChassis = "CH18951", load = 2000}
+                    
+                };
+
+            var theTransmissions = new List<Transmission>()
+                {
+                    new Transmission() {type = "Manual", gear = 6, manufacturer = "AUDI"},
+                    new Transmission() {type = "Manual", gear = 6, manufacturer = "AUDI"},
+                    new Transmission() {type = "Manual", gear = 6, manufacturer = "AUDI"},
+                    new Transmission() {type = "Manual", gear = 6, manufacturer = "AUDI"},
+                    new Transmission() {type = "Manual", gear = 6, manufacturer = "AUDI"}
+
+                };
+
+            Console.WriteLine(theEngines[0]);
+
+            Console.WriteLine("\nEngine List:\n");
+
             foreach (Engine theEngine in theEngines)
             {
                 theEngine.PrintEngine();
             }
 
+            Console.WriteLine("\nСhassis List:\n");
 
+            foreach (Сhassis theChassis in theChassises)
+            {
+                theChassis.PrintСhassis();
+            }
+
+            Console.WriteLine("\nTransmission List:\n");
+
+            foreach (Transmission theTransmission in theTransmissions)
+            {
+                theTransmission.PrintTransmission();
+            }
+
+
+            //Создать списки Двигателей, Шасси и трасмиссий. > потом сделать Словари Car, lorry...
 
             //// LORRY information
             //Engine lorryEngine = new Engine(990, 14, "VolvoTruck", "99TR99");
@@ -89,6 +126,5 @@ namespace EpamAutoPark
 
             Console.ReadLine(); // Frendly exit
         }
-       
     }
 }

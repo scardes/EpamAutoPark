@@ -13,15 +13,7 @@ namespace EpamAutoPark
         public double volume { get; set; }
         public string type { get; set; }
         public string numberEngine { get; set; }
-
-        //public Engine(int power, double volume, string type, string numberEngine)
-        //{
-        //    this.power = power;
-        //    this.volume = volume;
-        //    this.type = type;
-        //    this.numberEngine = numberEngine;
-        //}
-
+                
         // Print information about engine
         public void PrintEngine()
         {
