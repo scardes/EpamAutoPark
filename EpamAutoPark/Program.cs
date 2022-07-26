@@ -11,15 +11,6 @@ namespace EpamAutoPark
     {
         static void Main(string[] args)
         {
-            // CAR information
-            //Сhassis carChassis = new Сhassis() { wheel = 4, numberChassis = "CH18951", load = 2000 };
-            //Transmission carTransmission = new Transmission() { type = "Manual", gear = 6, manufacturer = "AUDI" };
-
-            //Console.WriteLine("Car INFO:\n");
-            //carEngine.PrintEngine();
-            //carChassis.PrintСhassis();
-            //carTransmission.PrintTransmission();
-
             var theEngines = new List<Engine>()
                 {
                     new Engine() { power = 80, volume = 1.5,  type = "Car_Golf", numberEngine = "Car_015"},
@@ -49,64 +40,107 @@ namespace EpamAutoPark
 
             var theChassises = new List<Сhassis>()
                 {
-                    new Сhassis() { wheel = 4, numberChassis = "CH_886", load = 2000},
-                    new Сhassis() { wheel = 4, numberChassis = "CH18951", load = 2000},
-                    new Сhassis() { wheel = 4, numberChassis = "CH18951", load = 2000},
-                    new Сhassis() { wheel = 4, numberChassis = "CH18951", load = 2000},
-                    new Сhassis() { wheel = 4, numberChassis = "CH18951", load = 2000}
+                    new Сhassis() { wheel = 4, numberChassis = "Car_Golf", load = 2000},
+                    new Сhassis() { wheel = 4, numberChassis = "CR_951", load = 2000},
+                    new Сhassis() { wheel = 4, numberChassis = "CR_892", load = 2000},
+                    new Сhassis() { wheel = 4, numberChassis = "CR_1151", load = 2000},
+                    new Сhassis() { wheel = 4, numberChassis = "CR_1951", load = 2000}
                     
                 };
 
             var theTransmissions = new List<Transmission>()
                 {
-                    new Transmission() {type = "Manual", gear = 6, manufacturer = "AUDI"},
-                    new Transmission() {type = "Manual", gear = 6, manufacturer = "AUDI"},
-                    new Transmission() {type = "Manual", gear = 6, manufacturer = "AUDI"},
-                    new Transmission() {type = "Manual", gear = 6, manufacturer = "AUDI"},
-                    new Transmission() {type = "Manual", gear = 6, manufacturer = "AUDI"}
+                    new Transmission() {type = "Car_Golf", gear = 5, manufacturer = "VW"},
+                    new Transmission() {type = "Auto", gear = 5, manufacturer = "Honda"},
+                    new Transmission() {type = "Auto", gear = 6, manufacturer = "Honda"},
+                    new Transmission() {type = "Manual", gear = 6, manufacturer = "Honda"},
+                    new Transmission() {type = "Auto", gear = 5, manufacturer = "Jeep"}
 
                 };
 
             var theAutos = new List<Auto>()
                 {
-                    new Auto() {type = "Car", model = "VW Golf 4", year = 1995},
+                    new Auto() {type = "Car_Golf", model = "VW Golf 4", year = 1995},
                     new Auto() {type = "Car", model = "Honda Civic", year = 1995},
                     new Auto() {type = "Car", model = "Honda Accord", year = 1995},
                     new Auto() {type = "Car", model = "Acura RSX", year = 1995},
                     new Auto() {type = "Car", model = "Jeep Liberty", year = 1995}
 
                 };
+           
 
+            var autos = from auto in theAutos
+                        join e in theEngines on auto.type equals e.type
+                        join c in theChassises on auto.type equals c.numberChassis
+                        join t in theTransmissions on auto.type equals t.type
 
-            Console.WriteLine(theEngines[0]);
+                        select new {Type = auto.type, Model = auto.model, 
+                            Power = e.power, Load = c.load, Gear = t.gear };
 
-            Console.WriteLine("\nEngine List:\n");
-
-            foreach (Engine theEngine in theEngines)
+            foreach (var au in autos)
             {
-                theEngine.PrintEngine();
+                Console.WriteLine($"{au.Type} - {au.Model}" +
+                    $" {au.Power}, {au.Load}, {au.Gear} ");
+                
+                
             }
 
-            Console.WriteLine("\nСhassis List:\n");
 
-            foreach (Сhassis theChassis in theChassises)
-            {
-                theChassis.PrintСhassis();
-            }
+            Console.WriteLine("\n*******\n");
 
-            Console.WriteLine("\nTransmission List:\n");
+            var selectEngine = from e in theEngines
+                               where e.power > 400
+                               select e;
 
-            foreach (Transmission theTransmission in theTransmissions)
-            {
-                theTransmission.PrintTransmission();
-            }
+            foreach (Engine engine in selectEngine)
+                engine.PrintEngine();
 
-            Console.WriteLine("\nAUTO List:\n");
 
-            foreach (Auto theAuto in theAutos)
-            {
-                theAuto.PrintAuto();
-            }
+            //var autos = new List<Auto>
+            //{
+            //    new Auto ("Car", "VW Golf 4", 1995, new List<Engine> {new  Engine() { power = 80, volume = 1.5,  type = "Car_Golf", numberEngine = "Car_015"}})
+            //}
+
+            Console.WriteLine("\n*******\n");
+
+
+            //Console.WriteLine("\nEngine List:\n");
+
+            //foreach (Engine theEngine in theEngines)
+            //{
+            //    theEngine.PrintEngine();
+            //}
+
+            //Console.WriteLine("\nСhassis List:\n");
+
+            //foreach (Сhassis theChassis in theChassises)
+            //{
+            //    theChassis.PrintСhassis();
+            //}
+
+            //Console.WriteLine("\nTransmission List:\n");
+
+            //foreach (Transmission theTransmission in theTransmissions)
+            //{
+            //    theTransmission.PrintTransmission();
+            //}
+
+            //Console.WriteLine("\nAUTO List:\n");
+
+            //foreach (Auto theAuto in theAutos)
+            //{
+            //    theAuto.PrintAuto();
+            //}
+
+
+            // CAR information
+            //Сhassis carChassis = new Сhassis() { wheel = 4, numberChassis = "CH18951", load = 2000 };
+            //Transmission carTransmission = new Transmission() { type = "Manual", gear = 6, manufacturer = "AUDI" };
+
+            //Console.WriteLine("Car INFO:\n");
+            //carEngine.PrintEngine();
+            //carChassis.PrintСhassis();
+            //carTransmission.PrintTransmission();
 
 
             //// LORRY information
