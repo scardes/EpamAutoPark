@@ -9,10 +9,11 @@ namespace EpamAutoPark
 {
     class Сhassis 
     {
+        public string type { get; set; }
         public int wheel { get; set; }
         public double load { get; set; }
         public string numberChassis { get; set; }
-              
+             
         // Print information about chassis
         public void PrintСhassis()
         {

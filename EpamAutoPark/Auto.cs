@@ -7,12 +7,11 @@ namespace EpamAutoPark
     class Auto
     {
         public string type { get; set; }
-        public string model { get; set; }
         public int year { get; set; }
 
         public void PrintAuto()
         {
-            Console.WriteLine($"AUTO  INFO: *Type* : {type}\t *Model* : {model}\t *Year*: {year}\t");
+            Console.WriteLine($"AUTO  INFO: *Type* : {type}\t *Year*: {year}\t");
         }
     }
 }

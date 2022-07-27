@@ -12,14 +12,7 @@ namespace EpamAutoPark
         public int gear { get; set; }
         public string type { get; set; }
         public string manufacturer { get; set; }
-
-        //public Transmission(string type, int gear, string manufacturer)
-        //{
-        //    this.type = type; 
-        //    this.gear = gear; 
-        //    this.manufacturer = manufacturer;
-        //}
-
+        
         // Print information about transmission
         public void PrintTransmission()
         {
