@@ -141,7 +141,7 @@ namespace EpamAutoPark
                     $"\nTransmission INFO: *Type* : {auto.TrasnmissionType}\t *Have Gears*: {auto.Gear}\t *Manufacturer*: {auto.Manufacturer}\t \n");
             }
 
-            Console.WriteLine("\n*** Vehicles(full information) with Engine Volume more than 1.5 litres ***\n\n");
+            Console.WriteLine("\n***1. Vehicles(full information) with Engine Volume more than 1.5 litres ***\n\n");
 
             var bigEngine = from se in autos
                               where se.Volume > 1.5
@@ -154,8 +154,34 @@ namespace EpamAutoPark
                     $"\nСhassis INFO:\t   *Wheel*: {auto.Wheel}\t\t *Number*: {auto.Number}\t *Load*: {auto.Load}\t " +
                     $"\nTransmission INFO: *Type* : {auto.TrasnmissionType}\t *Have Gears*: {auto.Gear}\t *Manufacturer*: {auto.Manufacturer}\t \n");
             }
-            
-            Console.WriteLine("\nExit");
+
+            Console.WriteLine("\n***2. Engine Information of lorries and buses ***\n\n");
+
+            var enginesLorryBus = from elb in autos
+                                  where elb.Type.Contains("Lorry") || elb.Type.Contains("Bus")
+                                  select elb;
+
+            foreach (var auto in enginesLorryBus)
+            {
+                Console.WriteLine($"  Vehicle Type: {auto.Type} - {auto.Year} year:" +
+                    $"\nEngine  INFO:\t   *Power*: {auto.Power}\t\t *Volume*: {auto.Volume}\t\t *Serial Number*: {auto.EngineNumber}\t\n");
+            }
+
+            Console.WriteLine("\n***3. Vehicles(full information) with group by TrasnmissionType ***\n\n");
+
+            var transmissionSorter = from ts in autos
+                                     orderby ts.TrasnmissionType
+                                     select ts;
+
+            foreach (var auto in transmissionSorter)
+            {
+                Console.WriteLine($"  Vehicle Type: {auto.Type} - {auto.Year} year \tAND *Trasnmission Type* : ***{auto.TrasnmissionType}***" +
+                    $"\nEngine  INFO:\t   *Power*: {auto.Power}\t\t *Volume*: {auto.Volume}\t\t *Serial Number*: {auto.EngineNumber}\t" +
+                    $"\nСhassis INFO:\t   *Wheel*: {auto.Wheel}\t\t *Number*: {auto.Number}\t *Load*: {auto.Load}\t " +
+                    $"\nTransmission INFO: *Type* : {auto.TrasnmissionType}\t *Have Gears*: {auto.Gear}\t *Manufacturer*: {auto.Manufacturer}\t \n");
+            }
+
+            Console.WriteLine("Programm Exit");
             Console.ReadLine(); // Frendly exit
         }
     }
