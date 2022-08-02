@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Xml.Linq;
 
 /// <summary>
 /// Car park management program. Output is information about all vehicles
@@ -120,9 +122,7 @@ namespace EpamAutoPark
                     new Auto() {type = "Scooter_Honda",  year = 2021}
 
                 };
-
-            Console.WriteLine("*** List of all Vehicles ***\n");
-
+                        
             var autos = from auto in theAutos
                         join engine in theEngines on auto.type equals engine.type
                         join chassises in theChassises on auto.type equals chassises.type
@@ -133,53 +133,92 @@ namespace EpamAutoPark
                             Wheel = chassises.wheel, Number = chassises.numberChassis, Load = chassises.load, 
                             TrasnmissionType = transmission.type, Gear = transmission.gear, Manufacturer = transmission.manufacturer };
 
-            foreach (var auto in autos)
-            {
-                Console.WriteLine($"  Vehicle Type: {auto.Type} - {auto.Year} year:" +
-                    $"\nEngine  INFO:\t   *Power*: {auto.Power}\t\t *Volume*: {auto.Volume}\t\t *Serial Number*: {auto.EngineNumber}\t" +
-                    $"\nСhassis INFO:\t   *Wheel*: {auto.Wheel}\t\t *Number*: {auto.Number}\t *Load*: {auto.Load}\t " +
-                    $"\nTransmission INFO: *Type* : {auto.TrasnmissionType}\t *Have Gears*: {auto.Gear}\t *Manufacturer*: {auto.Manufacturer}\t \n");
-            }
+            //Console.WriteLine("*** List of all Vehicles ***\n");
 
+            //foreach (var auto in autos)
+            //{
+            //    Console.WriteLine($"  Vehicle Type: {auto.Type} - {auto.Year} year:" +
+            //        $"\nEngine  INFO:\t   *Power*: {auto.Power}\t\t *Volume*: {auto.Volume}\t\t *Serial Number*: {auto.EngineNumber}\t" +
+            //        $"\nСhassis INFO:\t   *Wheel*: {auto.Wheel}\t\t *Number*: {auto.Number}\t *Load*: {auto.Load}\t " +
+            //        $"\nTransmission INFO: *Type* : {auto.TrasnmissionType}\t *Have Gears*: {auto.Gear}\t *Manufacturer*: {auto.Manufacturer}\t \n");
+            //}
+
+             
             Console.WriteLine("\n***1. Vehicles(full information) with Engine Volume more than 1.5 litres ***\n\n");
 
             var bigEngine = from se in autos
                               where se.Volume > 1.5
                               select se;
 
+
+            XDocument doc = new XDocument();
+            XElement library = new XElement("library");
+            doc.Add(library);
+
             foreach (var auto in bigEngine)
             {
+                
+                //создаем элемент "vehicles"
+                XElement vehicle = new XElement("vehicles");
+                //добавляем необходимые атрибуты
+                vehicle.Add(new XAttribute("type", auto.Type));
+                vehicle.Add(new XAttribute("year", auto.Year));
+
+                // add elements
+                XElement power = new XElement("power");
+                power.Value = auto.Power.ToString();
+                vehicle.Add(power);
+
+                // add elements
+                XElement volume = new XElement("volume");
+                volume.Value = auto.Volume.ToString();
+                vehicle.Add(volume);
+
+                // add elements
+                XElement engineNumber = new XElement("enginenumber");
+                engineNumber.Value = auto.EngineNumber;
+                vehicle.Add(engineNumber);
+
+
+                doc.Root.Add(vehicle);
+
                 Console.WriteLine($"  Vehicle Type: {auto.Type} - {auto.Year} year:" +
                     $"\nEngine  INFO:\t   *Power*: {auto.Power}\t\t *Volume*: {auto.Volume}\t\t *Serial Number*: {auto.EngineNumber}\t" +
                     $"\nСhassis INFO:\t   *Wheel*: {auto.Wheel}\t\t *Number*: {auto.Number}\t *Load*: {auto.Load}\t " +
                     $"\nTransmission INFO: *Type* : {auto.TrasnmissionType}\t *Have Gears*: {auto.Gear}\t *Manufacturer*: {auto.Manufacturer}\t \n");
             }
 
-            Console.WriteLine("\n***2. Engine Information of lorries and buses ***\n\n");
+            //сохраняем наш документ
+            doc.Save("VehiclesBigEngine.xml");
+
+
+
+
+            //Console.WriteLine("\n***2. Engine Information of lorries and buses ***\n\n");
 
             var enginesLorryBus = from elb in autos
                                   where elb.Type.Contains("Lorry") || elb.Type.Contains("Bus")
                                   select elb;
 
-            foreach (var auto in enginesLorryBus)
-            {
-                Console.WriteLine($"  Vehicle Type: {auto.Type} - {auto.Year} year:" +
-                    $"\nEngine  INFO:\t   *Power*: {auto.Power}\t\t *Volume*: {auto.Volume}\t\t *Serial Number*: {auto.EngineNumber}\t\n");
-            }
+            //foreach (var auto in enginesLorryBus)
+            //{
+            //    Console.WriteLine($"  Vehicle Type: {auto.Type} - {auto.Year} year:" +
+            //        $"\nEngine  INFO:\t   *Power*: {auto.Power}\t\t *Volume*: {auto.Volume}\t\t *Serial Number*: {auto.EngineNumber}\t\n");
+            //}
 
-            Console.WriteLine("\n***3. Vehicles(full information) with group by TrasnmissionType ***\n\n");
+            //Console.WriteLine("\n***3. Vehicles(full information) with group by TrasnmissionType ***\n\n");
 
             var transmissionSorter = from ts in autos
                                      orderby ts.TrasnmissionType
                                      select ts;
 
-            foreach (var auto in transmissionSorter)
-            {
-                Console.WriteLine($"  Vehicle Type: {auto.Type} - {auto.Year} year \tAND *Trasnmission Type* : ***{auto.TrasnmissionType}***" +
-                    $"\nEngine  INFO:\t   *Power*: {auto.Power}\t\t *Volume*: {auto.Volume}\t\t *Serial Number*: {auto.EngineNumber}\t" +
-                    $"\nСhassis INFO:\t   *Wheel*: {auto.Wheel}\t\t *Number*: {auto.Number}\t *Load*: {auto.Load}\t " +
-                    $"\nTransmission INFO: *Type* : {auto.TrasnmissionType}\t *Have Gears*: {auto.Gear}\t *Manufacturer*: {auto.Manufacturer}\t \n");
-            }
+            //foreach (var auto in transmissionSorter)
+            //{
+            //    Console.WriteLine($"  Vehicle Type: {auto.Type} - {auto.Year} year \tAND *Trasnmission Type* : ***{auto.TrasnmissionType}***" +
+            //        $"\nEngine  INFO:\t   *Power*: {auto.Power}\t\t *Volume*: {auto.Volume}\t\t *Serial Number*: {auto.EngineNumber}\t" +
+            //        $"\nСhassis INFO:\t   *Wheel*: {auto.Wheel}\t\t *Number*: {auto.Number}\t *Load*: {auto.Load}\t " +
+            //        $"\nTransmission INFO: *Type* : {auto.TrasnmissionType}\t *Have Gears*: {auto.Gear}\t *Manufacturer*: {auto.Manufacturer}\t \n");
+            //}
 
             Console.WriteLine("Programm Exit");
             Console.ReadLine(); // Frendly exit
