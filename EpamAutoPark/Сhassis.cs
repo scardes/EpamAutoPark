@@ -14,10 +14,5 @@ namespace EpamAutoPark
         public double load { get; set; }
         public string numberChassis { get; set; }
              
-        // Print information about chassis
-        public void PrintСhassis()
-        {
-            Console.WriteLine($"Сhassis INFO:\t   *Wheel*: {wheel}\t\t *Number*: {numberChassis}\t *Load*: {load}\t");
-        }
     }
 }

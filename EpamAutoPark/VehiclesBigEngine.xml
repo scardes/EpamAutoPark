@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<autopark>
+  <vehicles type="Car_Acura RSX" year="2020">
+    <info>Engine  INFO:</info>
+    <power>180</power>
+    <volume>2</volume>
+    <enginenumber>Car_020</enginenumber>
+    <info>Сhassis  INFO:</info>
+    <wheel>4</wheel>
+    <number>CRHC_111</number>
+    <load>3060</load>
+    <info>Transmission INFO:</info>
+    <trasnmissionType>Manual</trasnmissionType>
+    <gear>6</gear>
+    <manufacturer>Car_Acura RSX</manufacturer>
+  </vehicles>
+  <vehicles type="Car_Jeep Liberty" year="1995">
+    <info>Engine  INFO:</info>
+    <power>400</power>
+    <volume>4</volume>
+    <enginenumber>Car_040</enginenumber>
+    <info>Сhassis  INFO:</info>
+    <wheel>4</wheel>
+    <number>CRJL_1RR</number>
+    <load>4000</load>
+    <info>Transmission INFO:</info>
+    <trasnmissionType>Auto</trasnmissionType>
+    <gear>5</gear>
+    <manufacturer>Car_Jeep Liberty</manufacturer>
+  </vehicles>
+  <vehicles type="Lorry_Kamaz" year="1997">
+    <info>Engine  INFO:</info>
+    <power>500</power>
+    <volume>6</volume>
+    <enginenumber>Lorry_060</enginenumber>
+    <info>Сhassis  INFO:</info>
+    <wheel>6</wheel>
+    <number>LK_655</number>
+    <load>5400</load>
+    <info>Transmission INFO:</info>
+    <trasnmissionType>Manual</trasnmissionType>
+    <gear>6</gear>
+    <manufacturer>Lorry_Kamaz</manufacturer>
+  </vehicles>
+  <vehicles type="Lorry_Man" year="2019">
+    <info>Engine  INFO:</info>
+    <power>590</power>
+    <volume>6,2</volume>
+    <enginenumber>Lorry_062</enginenumber>
+    <info>Сhassis  INFO:</info>
+    <wheel>6</wheel>
+    <number>LM_777</number>
+    <load>6000</load>
+    <info>Transmission INFO:</info>
+    <trasnmissionType>Auto</trasnmissionType>
+    <gear>7</gear>
+    <manufacturer>Lorry_Man</manufacturer>
+  </vehicles>
+  <vehicles type="Lorry_Mersedes" year="2015">
+    <info>Engine  INFO:</info>
+    <power>640</power>
+    <volume>6,4</volume>
+    <enginenumber>Lorry_064</enginenumber>
+    <info>Сhassis  INFO:</info>
+    <wheel>6</wheel>
+    <number>LQ_88M</number>
+    <load>7000</load>
+    <info>Transmission INFO:</info>
+    <trasnmissionType>Auto</trasnmissionType>
+    <gear>7</gear>
+    <manufacturer>Lorry_Mersedes</manufacturer>
+  </vehicles>
+  <vehicles type="Lorry_Renaught" year="2011">
+    <info>Engine  INFO:</info>
+    <power>710</power>
+    <volume>6,8</volume>
+    <enginenumber>Lorry_068</enginenumber>
+    <info>Сhassis  INFO:</info>
+    <wheel>6</wheel>
+    <number>LR_515</number>
+    <load>7560</load>
+    <info>Transmission INFO:</info>
+    <trasnmissionType>Manual</trasnmissionType>
+    <gear>6</gear>
+    <manufacturer>Lorry_Renaught</manufacturer>
+  </vehicles>
+  <vehicles type="Lorry_Volvo" year="2022">
+    <info>Engine  INFO:</info>
+    <power>800</power>
+    <volume>7</volume>
+    <enginenumber>Lorry_070</enginenumber>
+    <info>Сhassis  INFO:</info>
+    <wheel>8</wheel>
+    <number>LV_155</number>
+    <load>11000</load>
+    <info>Transmission INFO:</info>
+    <trasnmissionType>Manual</trasnmissionType>
+    <gear>5</gear>
+    <manufacturer>Lorry_Volvo</manufacturer>
+  </vehicles>
+  <vehicles type="Bus_Liaz" year="1991">
+    <info>Engine  INFO:</info>
+    <power>520</power>
+    <volume>6,4</volume>
+    <enginenumber>Bus_064</enginenumber>
+    <info>Сhassis  INFO:</info>
+    <wheel>4</wheel>
+    <number>BSL_03K0</number>
+    <load>4400</load>
+    <info>Transmission INFO:</info>
+    <trasnmissionType>Manual</trasnmissionType>
+    <gear>5</gear>
+    <manufacturer>Bus_Liaz</manufacturer>
+  </vehicles>
+  <vehicles type="Bus_Scania" year="1998">
+    <info>Engine  INFO:</info>
+    <power>575</power>
+    <volume>6,9</volume>
+    <enginenumber>Bus_069</enginenumber>
+    <info>Сhassis  INFO:</info>
+    <wheel>4</wheel>
+    <number>BSS_0LK8</number>
+    <load>4250</load>
+    <info>Transmission INFO:</info>
+    <trasnmissionType>Manual</trasnmissionType>
+    <gear>5</gear>
+    <manufacturer>Bus_Scania</manufacturer>
+  </vehicles>
+  <vehicles type="Bus_Man" year="2009">
+    <info>Engine  INFO:</info>
+    <power>615</power>
+    <volume>7,2</volume>
+    <enginenumber>Bus_072</enginenumber>
+    <info>Сhassis  INFO:</info>
+    <wheel>6</wheel>
+    <number>BSM_0RK1</number>
+    <load>6600</load>
+    <info>Transmission INFO:</info>
+    <trasnmissionType>Auto</trasnmissionType>
+    <gear>6</gear>
+    <manufacturer>Bus_Man</manufacturer>
+  </vehicles>
+  <vehicles type="Bus_Volvo" year="2021">
+    <info>Engine  INFO:</info>
+    <power>770</power>
+    <volume>7,4</volume>
+    <enginenumber>Bus_074</enginenumber>
+    <info>Сhassis  INFO:</info>
+    <wheel>6</wheel>
+    <number>BSV_0FK9</number>
+    <load>7960</load>
+    <info>Transmission INFO:</info>
+    <trasnmissionType>Manual</trasnmissionType>
+    <gear>6</gear>
+    <manufacturer>Bus_Volvo</manufacturer>
+  </vehicles>
+  <vehicles type="Bus_Mersedes" year="2022">
+    <info>Engine  INFO:</info>
+    <power>910</power>
+    <volume>8</volume>
+    <enginenumber>Bus_080</enginenumber>
+    <info>Сhassis  INFO:</info>
+    <wheel>4</wheel>
+    <number>BSM_0CK2</number>
+    <load>8500</load>
+    <info>Transmission INFO:</info>
+    <trasnmissionType>Auto</trasnmissionType>
+    <gear>5</gear>
+    <manufacturer>Bus_Mersedes</manufacturer>
+  </vehicles>
+</autopark>

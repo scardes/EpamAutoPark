@@ -12,9 +12,5 @@ namespace EpamAutoPark
         public string type { get; set; }
         public int year { get; set; }
 
-        public void PrintAuto()
-        {
-            Console.WriteLine($"AUTO  INFO: *Type* : {type}\t *Year*: {year}\t");
-        }
     }
 }

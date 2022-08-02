@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<enginepark>
+  <vehicles type="Lorry_Kamaz" year="1997">
+    <info>Engine  INFO:</info>
+    <power>500</power>
+    <volume>6</volume>
+    <enginenumber>Lorry_060</enginenumber>
+  </vehicles>
+  <vehicles type="Lorry_Man" year="2019">
+    <info>Engine  INFO:</info>
+    <power>590</power>
+    <volume>6,2</volume>
+    <enginenumber>Lorry_062</enginenumber>
+  </vehicles>
+  <vehicles type="Lorry_Mersedes" year="2015">
+    <info>Engine  INFO:</info>
+    <power>640</power>
+    <volume>6,4</volume>
+    <enginenumber>Lorry_064</enginenumber>
+  </vehicles>
+  <vehicles type="Lorry_Renaught" year="2011">
+    <info>Engine  INFO:</info>
+    <power>710</power>
+    <volume>6,8</volume>
+    <enginenumber>Lorry_068</enginenumber>
+  </vehicles>
+  <vehicles type="Lorry_Volvo" year="2022">
+    <info>Engine  INFO:</info>
+    <power>800</power>
+    <volume>7</volume>
+    <enginenumber>Lorry_070</enginenumber>
+  </vehicles>
+  <vehicles type="Bus_Liaz" year="1991">
+    <info>Engine  INFO:</info>
+    <power>520</power>
+    <volume>6,4</volume>
+    <enginenumber>Bus_064</enginenumber>
+  </vehicles>
+  <vehicles type="Bus_Scania" year="1998">
+    <info>Engine  INFO:</info>
+    <power>575</power>
+    <volume>6,9</volume>
+    <enginenumber>Bus_069</enginenumber>
+  </vehicles>
+  <vehicles type="Bus_Man" year="2009">
+    <info>Engine  INFO:</info>
+    <power>615</power>
+    <volume>7,2</volume>
+    <enginenumber>Bus_072</enginenumber>
+  </vehicles>
+  <vehicles type="Bus_Volvo" year="2021">
+    <info>Engine  INFO:</info>
+    <power>770</power>
+    <volume>7,4</volume>
+    <enginenumber>Bus_074</enginenumber>
+  </vehicles>
+  <vehicles type="Bus_Mersedes" year="2022">
+    <info>Engine  INFO:</info>
+    <power>910</power>
+    <volume>8</volume>
+    <enginenumber>Bus_080</enginenumber>
+  </vehicles>
+</enginepark>

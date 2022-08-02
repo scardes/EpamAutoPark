@@ -14,10 +14,5 @@ namespace EpamAutoPark
         public string type { get; set; }
         public string numberEngine { get; set; }
         
-        // Print information about engine
-        public void PrintEngine()
-        {
-            Console.WriteLine($"Engine INFO:\t   *Power*: {power}\t\t *Volume*: {volume}\t\t *Type*: {type}\t *Serial Number*: {numberEngine}\t");
-        }
     }
 }

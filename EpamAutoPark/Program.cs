@@ -122,7 +122,8 @@ namespace EpamAutoPark
                     new Auto() {type = "Scooter_Honda",  year = 2021}
 
                 };
-                        
+            
+            // Collect all autos information in one collection
             var autos = from auto in theAutos
                         join engine in theEngines on auto.type equals engine.type
                         join chassises in theChassises on auto.type equals chassises.type
@@ -133,54 +134,86 @@ namespace EpamAutoPark
                             Wheel = chassises.wheel, Number = chassises.numberChassis, Load = chassises.load, 
                             TrasnmissionType = transmission.type, Gear = transmission.gear, Manufacturer = transmission.manufacturer };
 
-            //Console.WriteLine("*** List of all Vehicles ***\n");
-
-            //foreach (var auto in autos)
-            //{
-            //    Console.WriteLine($"  Vehicle Type: {auto.Type} - {auto.Year} year:" +
-            //        $"\nEngine  INFO:\t   *Power*: {auto.Power}\t\t *Volume*: {auto.Volume}\t\t *Serial Number*: {auto.EngineNumber}\t" +
-            //        $"\nСhassis INFO:\t   *Wheel*: {auto.Wheel}\t\t *Number*: {auto.Number}\t *Load*: {auto.Load}\t " +
-            //        $"\nTransmission INFO: *Type* : {auto.TrasnmissionType}\t *Have Gears*: {auto.Gear}\t *Manufacturer*: {auto.Manufacturer}\t \n");
-            //}
-
-             
-            Console.WriteLine("\n***1. Vehicles(full information) with Engine Volume more than 1.5 litres ***\n\n");
+            //Start first xml document 
+            Console.WriteLine("\n***1. List of Vehicles(full information) with Engine Volume more than 1.5 litres ***\n");
 
             var bigEngine = from se in autos
                               where se.Volume > 1.5
                               select se;
 
-
-            XDocument doc = new XDocument();
-            XElement library = new XElement("library");
-            doc.Add(library);
+            XDocument vehiclesBigEngine = new XDocument();
+            XElement autoPark = new XElement("autopark");
+            vehiclesBigEngine.Add(autoPark);
 
             foreach (var auto in bigEngine)
             {
-                
-                //создаем элемент "vehicles"
                 XElement vehicle = new XElement("vehicles");
-                //добавляем необходимые атрибуты
+                
+                //Add attributes
                 vehicle.Add(new XAttribute("type", auto.Type));
                 vehicle.Add(new XAttribute("year", auto.Year));
 
-                // add elements
+                // Engine  INFO:
+                string engineData = "<info>Engine  INFO:</info>";
+                XElement engineInfo = XElement.Parse(engineData);
+                vehicle.Add(engineInfo);
+
+                //Add element Power
                 XElement power = new XElement("power");
                 power.Value = auto.Power.ToString();
                 vehicle.Add(power);
 
-                // add elements
+                //Add element Volume
                 XElement volume = new XElement("volume");
                 volume.Value = auto.Volume.ToString();
                 vehicle.Add(volume);
 
-                // add elements
+                //Add element EngineNumber
                 XElement engineNumber = new XElement("enginenumber");
                 engineNumber.Value = auto.EngineNumber;
                 vehicle.Add(engineNumber);
 
+                // Сhassis INFO:
+                string chassisData = "<info>Сhassis  INFO:</info>";
+                XElement chassisInfo = XElement.Parse(chassisData);
+                vehicle.Add(chassisInfo);
 
-                doc.Root.Add(vehicle);
+                //Add element Wheel
+                XElement wheel = new XElement("wheel");
+                wheel.Value = auto.Wheel.ToString();
+                vehicle.Add(wheel);
+
+                //Add element Number
+                XElement number = new XElement("number");
+                number.Value = auto.Number;
+                vehicle.Add(number);
+
+                //Add element Load
+                XElement load = new XElement("load");
+                load.Value = auto.Load.ToString();
+                vehicle.Add(load);
+
+                // Transmission INFO:
+                string transmissionData = "<info>Transmission INFO:</info>";
+                XElement transmissionInfo = XElement.Parse(transmissionData);
+                vehicle.Add(transmissionInfo);
+
+                //Add element TrasnmissionType
+                XElement trasnmissionType = new XElement("trasnmissionType");
+                trasnmissionType.Value = auto.TrasnmissionType;
+                vehicle.Add(trasnmissionType);
+
+                //Add element Gear
+                XElement gear = new XElement("gear");
+                gear.Value = auto.Gear.ToString();
+                vehicle.Add(gear);
+
+                //Add element Manufacturer
+                XElement manufacturer = new XElement("manufacturer");
+                manufacturer.Value = auto.Manufacturer;
+                vehicle.Add(manufacturer);
+
+                vehiclesBigEngine.Root.Add(vehicle);
 
                 Console.WriteLine($"  Vehicle Type: {auto.Type} - {auto.Year} year:" +
                     $"\nEngine  INFO:\t   *Power*: {auto.Power}\t\t *Volume*: {auto.Volume}\t\t *Serial Number*: {auto.EngineNumber}\t" +
@@ -188,39 +221,156 @@ namespace EpamAutoPark
                     $"\nTransmission INFO: *Type* : {auto.TrasnmissionType}\t *Have Gears*: {auto.Gear}\t *Manufacturer*: {auto.Manufacturer}\t \n");
             }
 
-            //сохраняем наш документ
-            doc.Save("VehiclesBigEngine.xml");
+            //Save our document in xml
+            vehiclesBigEngine.Save("VehiclesBigEngine.xml");
 
+            Console.WriteLine("***1. Vehicles(full information) with Engine Volume more than 1.5 litres ***");
+            Console.WriteLine("***1. Saved in XML file: VehiclesBigEngine.xml ***\n");
 
-
-
-            //Console.WriteLine("\n***2. Engine Information of lorries and buses ***\n\n");
+            //Start second xml document 
+            Console.WriteLine("\n***2. List of Engine Information of lorries and buses ***\n");
 
             var enginesLorryBus = from elb in autos
                                   where elb.Type.Contains("Lorry") || elb.Type.Contains("Bus")
                                   select elb;
 
-            //foreach (var auto in enginesLorryBus)
-            //{
-            //    Console.WriteLine($"  Vehicle Type: {auto.Type} - {auto.Year} year:" +
-            //        $"\nEngine  INFO:\t   *Power*: {auto.Power}\t\t *Volume*: {auto.Volume}\t\t *Serial Number*: {auto.EngineNumber}\t\n");
-            //}
+            XDocument engineLorryBus = new XDocument();
+            XElement enginePark = new XElement("enginepark");
+            engineLorryBus.Add(enginePark);
 
-            //Console.WriteLine("\n***3. Vehicles(full information) with group by TrasnmissionType ***\n\n");
+            foreach (var auto in enginesLorryBus)
+            {
+                XElement vehicle = new XElement("vehicles");
 
-            var transmissionSorter = from ts in autos
+                //Add attributes
+                vehicle.Add(new XAttribute("type", auto.Type));
+                vehicle.Add(new XAttribute("year", auto.Year));
+
+                // Engine  INFO:
+                string engineData = "<info>Engine  INFO:</info>";
+                XElement engineInfo = XElement.Parse(engineData);
+                vehicle.Add(engineInfo);
+
+                //Add element Power
+                XElement power = new XElement("power");
+                power.Value = auto.Power.ToString();
+                vehicle.Add(power);
+
+                //Add element Volume
+                XElement volume = new XElement("volume");
+                volume.Value = auto.Volume.ToString();
+                vehicle.Add(volume);
+
+                //Add element EngineNumber
+                XElement engineNumber = new XElement("enginenumber");
+                engineNumber.Value = auto.EngineNumber;
+                vehicle.Add(engineNumber);
+
+                engineLorryBus.Root.Add(vehicle);
+
+                Console.WriteLine($"  Vehicle Type: {auto.Type} - {auto.Year} year:" +
+                    $"\nEngine  INFO:\t   *Power*: {auto.Power}\t\t *Volume*: {auto.Volume}\t\t *Serial Number*: {auto.EngineNumber}\t\n");
+            }
+
+            //Save our document in xml
+            engineLorryBus.Save("EnginesLorryBus.xml");
+
+            Console.WriteLine("***2. Engine Information of lorries and buses ***");
+            Console.WriteLine("***2. Saved in XML file: EnginesLorryBus.xml ***\n");
+
+            //Start third xml document 
+            Console.WriteLine("\n***3. List of Vehicles(full information) with group by TrasnmissionType ***\n\n");
+
+            var transmissionsSorter = from ts in autos
                                      orderby ts.TrasnmissionType
                                      select ts;
 
-            //foreach (var auto in transmissionSorter)
-            //{
-            //    Console.WriteLine($"  Vehicle Type: {auto.Type} - {auto.Year} year \tAND *Trasnmission Type* : ***{auto.TrasnmissionType}***" +
-            //        $"\nEngine  INFO:\t   *Power*: {auto.Power}\t\t *Volume*: {auto.Volume}\t\t *Serial Number*: {auto.EngineNumber}\t" +
-            //        $"\nСhassis INFO:\t   *Wheel*: {auto.Wheel}\t\t *Number*: {auto.Number}\t *Load*: {auto.Load}\t " +
-            //        $"\nTransmission INFO: *Type* : {auto.TrasnmissionType}\t *Have Gears*: {auto.Gear}\t *Manufacturer*: {auto.Manufacturer}\t \n");
-            //}
+            XDocument transmissionSorter = new XDocument();
+            XElement transmissionPark = new XElement("transmissionpark");
+            transmissionSorter.Add(transmissionPark);
 
-            Console.WriteLine("Programm Exit");
+            foreach (var auto in transmissionsSorter)
+            {
+                XElement vehicle = new XElement("vehicles");
+
+                //Add attributes
+                vehicle.Add(new XAttribute("type", auto.Type));
+                vehicle.Add(new XAttribute("year", auto.Year));
+
+                // Engine  INFO:
+                string engineData = "<info>Engine  INFO:</info>";
+                XElement engineInfo = XElement.Parse(engineData);
+                vehicle.Add(engineInfo);
+
+                //Add element Power
+                XElement power = new XElement("power");
+                power.Value = auto.Power.ToString();
+                vehicle.Add(power);
+
+                //Add element Volume
+                XElement volume = new XElement("volume");
+                volume.Value = auto.Volume.ToString();
+                vehicle.Add(volume);
+
+                //Add element EngineNumber
+                XElement engineNumber = new XElement("enginenumber");
+                engineNumber.Value = auto.EngineNumber;
+                vehicle.Add(engineNumber);
+
+                // Сhassis INFO:
+                string chassisData = "<info>Сhassis  INFO:</info>";
+                XElement chassisInfo = XElement.Parse(chassisData);
+                vehicle.Add(chassisInfo);
+
+                //Add element Wheel
+                XElement wheel = new XElement("wheel");
+                wheel.Value = auto.Wheel.ToString();
+                vehicle.Add(wheel);
+
+                //Add element Number
+                XElement number = new XElement("number");
+                number.Value = auto.Number;
+                vehicle.Add(number);
+
+                //Add element Load
+                XElement load = new XElement("load");
+                load.Value = auto.Load.ToString();
+                vehicle.Add(load);
+
+                // Transmission INFO:
+                string transmissionData = "<info>Transmission INFO:</info>";
+                XElement transmissionInfo = XElement.Parse(transmissionData);
+                vehicle.Add(transmissionInfo);
+
+                //Add element TrasnmissionType
+                XElement trasnmissionType = new XElement("trasnmissionType");
+                trasnmissionType.Value = auto.TrasnmissionType;
+                vehicle.Add(trasnmissionType);
+
+                //Add element Gear
+                XElement gear = new XElement("gear");
+                gear.Value = auto.Gear.ToString();
+                vehicle.Add(gear);
+
+                //Add element Manufacturer
+                XElement manufacturer = new XElement("manufacturer");
+                manufacturer.Value = auto.Manufacturer;
+                vehicle.Add(manufacturer);
+
+                transmissionSorter.Root.Add(vehicle);
+
+                Console.WriteLine($"  Vehicle Type: {auto.Type} - {auto.Year} year \tAND *Trasnmission Type* : ***{auto.TrasnmissionType}***" +
+                    $"\nEngine  INFO:\t   *Power*: {auto.Power}\t\t *Volume*: {auto.Volume}\t\t *Serial Number*: {auto.EngineNumber}\t" +
+                    $"\nСhassis INFO:\t   *Wheel*: {auto.Wheel}\t\t *Number*: {auto.Number}\t *Load*: {auto.Load}\t " +
+                    $"\nTransmission INFO: *Type* : {auto.TrasnmissionType}\t *Have Gears*: {auto.Gear}\t *Manufacturer*: {auto.Manufacturer}\t \n");
+            }
+
+            //Save our document in xml
+            transmissionSorter.Save("TransmissionSorter.xml");
+
+            Console.WriteLine("***3. Vehicles(full information) with group by TrasnmissionType ***");
+            Console.WriteLine("***3. Saved in XML file: TransmissionSorter.xml ***\n");
+
             Console.ReadLine(); // Frendly exit
         }
     }

@@ -12,11 +12,6 @@ namespace EpamAutoPark
         public int gear { get; set; }
         public string type { get; set; }
         public string manufacturer { get; set; }
-        
-        // Print information about transmission
-        public void PrintTransmission()
-        {
-            Console.WriteLine($"Transmission INFO: *Type* : {type}\t *Have Gears*: {gear}\t *Manufacturer*: {manufacturer}\t");
-        }
+
     }
 }
