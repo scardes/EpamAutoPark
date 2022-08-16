@@ -9,10 +9,10 @@ namespace EpamAutoPark
 {
     class Сhassis 
     {
-        public string type { get; set; }
-        public int wheel { get; set; }
-        public double load { get; set; }
-        public string numberChassis { get; set; }
+        public string Type { get; set; }
+        public int Wheel { get; set; }
+        public double Load { get; set; }
+        public string NumberChassis { get; set; }
              
     }
 }

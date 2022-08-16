@@ -9,8 +9,8 @@ namespace EpamAutoPark
 {
     class Auto
     {
-        public string type { get; set; }
-        public int year { get; set; }
+        public string Type { get; set; }
+        public int Year { get; set; }
 
     }
 }

@@ -15,124 +15,110 @@ namespace EpamAutoPark
         {
             var theEngines = new List<Engine>()
                 {
-                    new Engine() { power = 80,  volume = 1.1, type = "Car_VW Golf 4",    numberEngine = "Car_015"},
-                    new Engine() { power = 110, volume = 1.3, type = "Car_Honda Civic",  numberEngine = "Car_018"},
-                    new Engine() { power = 120, volume = 1.5, type = "Car_Honda Accord", numberEngine = "Car_015"},
-                    new Engine() { power = 180, volume = 2.0, type = "Car_Acura RSX",    numberEngine = "Car_020"},
-                    new Engine() { power = 400, volume = 4.0, type = "Car_Jeep Liberty", numberEngine = "Car_040"},
-
-                    new Engine() { power = 500, volume = 6,   type = "Lorry_Kamaz",      numberEngine = "Lorry_060"},
-                    new Engine() { power = 590, volume = 6.2, type = "Lorry_Man",        numberEngine = "Lorry_062"},
-                    new Engine() { power = 640, volume = 6.4, type = "Lorry_Mersedes",   numberEngine = "Lorry_064"},
-                    new Engine() { power = 710, volume = 6.8, type = "Lorry_Renaught",   numberEngine = "Lorry_068"},
-                    new Engine() { power = 800, volume = 7,   type = "Lorry_Volvo",      numberEngine = "Lorry_070"},
-                    
-                    new Engine() { power = 520, volume = 6.4, type = "Bus_Liaz",     numberEngine = "Bus_064"},
-                    new Engine() { power = 575, volume = 6.9, type = "Bus_Scania",   numberEngine = "Bus_069"},
-                    new Engine() { power = 615, volume = 7.2, type = "Bus_Man",      numberEngine = "Bus_072"},
-                    new Engine() { power = 770, volume = 7.4, type = "Bus_Volvo",    numberEngine = "Bus_074"},
-                    new Engine() { power = 910, volume = 8,   type = "Bus_Mersedes", numberEngine = "Bus_080"},
-
-                    new Engine() { power = 38,  volume = 0.3, type = "Scooter_Urban",  numberEngine = "Scooter_003"},
-                    new Engine() { power = 43,  volume = 0.3, type = "Scooter_Xiaomi", numberEngine = "Scooter_103"},
-                    new Engine() { power = 70,  volume = 0.7, type = "Scooter_Racer",  numberEngine = "Scooter_007"},
-                    new Engine() { power = 100, volume = 1.0, type = "Scooter_Yamaha", numberEngine = "Scooter_010"},
-                    new Engine() { power = 140, volume = 1.1, type = "Scooter_Honda",  numberEngine = "Scooter_011"}
+                    new Engine() { Power = 80,  Volume = 1.1, Type = "Car_VW Golf 4",    NumberEngine = "Car_015"},
+                    new Engine() { Power = 110, Volume = 1.3, Type = "Car_Honda Civic",  NumberEngine = "Car_018"},
+                    new Engine() { Power = 120, Volume = 1.5, Type = "Car_Honda Accord", NumberEngine = "Car_015"},
+                    new Engine() { Power = 180, Volume = 2.0, Type = "Car_Acura RSX",    NumberEngine = "Car_020"},
+                    new Engine() { Power = 400, Volume = 4.0, Type = "Car_Jeep Liberty", NumberEngine = "Car_040"},
+                    new Engine() { Power = 500, Volume = 6,   Type = "Lorry_Kamaz",      NumberEngine = "Lorry_060"},
+                    new Engine() { Power = 590, Volume = 6.2, Type = "Lorry_Man",        NumberEngine = "Lorry_062"},
+                    new Engine() { Power = 640, Volume = 6.4, Type = "Lorry_Mersedes",   NumberEngine = "Lorry_064"},
+                    new Engine() { Power = 710, Volume = 6.8, Type = "Lorry_Renaught",   NumberEngine = "Lorry_068"},
+                    new Engine() { Power = 800, Volume = 7,   Type = "Lorry_Volvo",      NumberEngine = "Lorry_070"},
+                    new Engine() { Power = 520, Volume = 6.4, Type = "Bus_Liaz",     NumberEngine = "Bus_064"},
+                    new Engine() { Power = 575, Volume = 6.9, Type = "Bus_Scania",   NumberEngine = "Bus_069"},
+                    new Engine() { Power = 615, Volume = 7.2, Type = "Bus_Man",      NumberEngine = "Bus_072"},
+                    new Engine() { Power = 770, Volume = 7.4, Type = "Bus_Volvo",    NumberEngine = "Bus_074"},
+                    new Engine() { Power = 910, Volume = 8,   Type = "Bus_Mersedes", NumberEngine = "Bus_080"},
+                    new Engine() { Power = 38,  Volume = 0.3, Type = "Scooter_Urban",  NumberEngine = "Scooter_003"},
+                    new Engine() { Power = 43,  Volume = 0.3, Type = "Scooter_Xiaomi", NumberEngine = "Scooter_103"},
+                    new Engine() { Power = 70,  Volume = 0.7, Type = "Scooter_Racer",  NumberEngine = "Scooter_007"},
+                    new Engine() { Power = 100, Volume = 1.0, Type = "Scooter_Yamaha", NumberEngine = "Scooter_010"},
+                    new Engine() { Power = 140, Volume = 1.1, Type = "Scooter_Honda",  NumberEngine = "Scooter_011"}
                 };
 
             var theChassises = new List<Сhassis>()
                 {
-                    new Сhassis() { type = "Car_VW Golf 4",    wheel = 4, numberChassis = "CRWG_448", load = 2400},
-                    new Сhassis() { type = "Car_Honda Civic",  wheel = 4, numberChassis = "CRHC_951", load = 2250},
-                    new Сhassis() { type = "Car_Honda Accord", wheel = 4, numberChassis = "CRHC_772", load = 3000},
-                    new Сhassis() { type = "Car_Acura RSX",    wheel = 4, numberChassis = "CRHC_111", load = 3060},
-                    new Сhassis() { type = "Car_Jeep Liberty", wheel = 4, numberChassis = "CRJL_1RR", load = 4000},
-
-                    new Сhassis() { type = "Lorry_Kamaz",    wheel = 6, numberChassis = "LK_655", load = 5400},
-                    new Сhassis() { type = "Lorry_Man",      wheel = 6, numberChassis = "LM_777", load = 6000},
-                    new Сhassis() { type = "Lorry_Mersedes", wheel = 6, numberChassis = "LQ_88M", load = 7000},
-                    new Сhassis() { type = "Lorry_Renaught", wheel = 6, numberChassis = "LR_515", load = 7560},
-                    new Сhassis() { type = "Lorry_Volvo",    wheel = 8, numberChassis = "LV_155", load = 11000},
-
-                    new Сhassis() { type = "Bus_Liaz",      wheel = 4, numberChassis = "BSL_03K0", load = 4400},
-                    new Сhassis() { type = "Bus_Scania",    wheel = 4, numberChassis = "BSS_0LK8", load = 4250},
-                    new Сhassis() { type = "Bus_Man",       wheel = 6, numberChassis = "BSM_0RK1", load = 6600},
-                    new Сhassis() { type = "Bus_Volvo",     wheel = 6, numberChassis = "BSV_0FK9", load = 7960},
-                    new Сhassis() { type = "Bus_Mersedes",  wheel = 4, numberChassis = "BSM_0CK2", load = 8500},
-
-                    new Сhassis() { type = "Scooter_Urban",  wheel = 2, numberChassis = "SC00U11", load = 1400},
-                    new Сhassis() { type = "Scooter_Xiaomi", wheel = 2, numberChassis = "SC00X24", load = 1250},
-                    new Сhassis() { type = "Scooter_Racer",  wheel = 2, numberChassis = "SC00R15", load = 1500},
-                    new Сhassis() { type = "Scooter_Yamaha", wheel = 2, numberChassis = "SC00Y26", load = 2060},
-                    new Сhassis() { type = "Scooter_Honda",  wheel = 2, numberChassis = "SC00H23", load = 2300}
+                    new Сhassis() { Type = "Car_VW Golf 4",    Wheel = 4, NumberChassis = "CRWG_448", Load = 2400},
+                    new Сhassis() { Type = "Car_Honda Civic",  Wheel = 4, NumberChassis = "CRHC_951", Load = 2250},
+                    new Сhassis() { Type = "Car_Honda Accord", Wheel = 4, NumberChassis = "CRHC_772", Load = 3000},
+                    new Сhassis() { Type = "Car_Acura RSX",    Wheel = 4, NumberChassis = "CRHC_111", Load = 3060},
+                    new Сhassis() { Type = "Car_Jeep Liberty", Wheel = 4, NumberChassis = "CRJL_1RR", Load = 4000},
+                    new Сhassis() { Type = "Lorry_Kamaz",    Wheel = 6, NumberChassis = "LK_655", Load = 5400},
+                    new Сhassis() { Type = "Lorry_Man",      Wheel = 6, NumberChassis = "LM_777", Load = 6000},
+                    new Сhassis() { Type = "Lorry_Mersedes", Wheel = 6, NumberChassis = "LQ_88M", Load = 7000},
+                    new Сhassis() { Type = "Lorry_Renaught", Wheel = 6, NumberChassis = "LR_515", Load = 7560},
+                    new Сhassis() { Type = "Lorry_Volvo",    Wheel = 8, NumberChassis = "LV_155", Load = 11000},
+                    new Сhassis() { Type = "Bus_Liaz",      Wheel = 4, NumberChassis = "BSL_03K0", Load = 4400},
+                    new Сhassis() { Type = "Bus_Scania",    Wheel = 4, NumberChassis = "BSS_0LK8", Load = 4250},
+                    new Сhassis() { Type = "Bus_Man",       Wheel = 6, NumberChassis = "BSM_0RK1", Load = 6600},
+                    new Сhassis() { Type = "Bus_Volvo",     Wheel = 6, NumberChassis = "BSV_0FK9", Load = 7960},
+                    new Сhassis() { Type = "Bus_Mersedes",  Wheel = 4, NumberChassis = "BSM_0CK2", Load = 8500},
+                    new Сhassis() { Type = "Scooter_Urban",  Wheel = 2, NumberChassis = "SC00U11", Load = 1400},
+                    new Сhassis() { Type = "Scooter_Xiaomi", Wheel = 2, NumberChassis = "SC00X24", Load = 1250},
+                    new Сhassis() { Type = "Scooter_Racer",  Wheel = 2, NumberChassis = "SC00R15", Load = 1500},
+                    new Сhassis() { Type = "Scooter_Yamaha", Wheel = 2, NumberChassis = "SC00Y26", Load = 2060},
+                    new Сhassis() { Type = "Scooter_Honda",  Wheel = 2, NumberChassis = "SC00H23", Load = 2300}
                 };
 
             var theTransmissions = new List<Transmission>()
                 {
-                    new Transmission() {type = "Manual", gear = 5, manufacturer = "Car_VW Golf 4"},
-                    new Transmission() {type = "Manual", gear = 5, manufacturer = "Car_Honda Civic"},
-                    new Transmission() {type = "Auto",   gear = 6, manufacturer = "Car_Honda Accord"},
-                    new Transmission() {type = "Manual", gear = 6, manufacturer = "Car_Acura RSX"},
-                    new Transmission() {type = "Auto",   gear = 5, manufacturer = "Car_Jeep Liberty"},
-
-                    new Transmission() {type = "Manual", gear = 6, manufacturer = "Lorry_Kamaz"},
-                    new Transmission() {type = "Auto",   gear = 7, manufacturer = "Lorry_Man"},
-                    new Transmission() {type = "Auto",   gear = 7, manufacturer = "Lorry_Mersedes"},
-                    new Transmission() {type = "Manual", gear = 6, manufacturer = "Lorry_Renaught"},
-                    new Transmission() {type = "Manual", gear = 5, manufacturer = "Lorry_Volvo"},
-
-                    new Transmission() {type = "Manual", gear = 5, manufacturer = "Bus_Liaz"},
-                    new Transmission() {type = "Manual", gear = 5, manufacturer = "Bus_Scania"},
-                    new Transmission() {type = "Auto",   gear = 6, manufacturer = "Bus_Man"},
-                    new Transmission() {type = "Manual", gear = 6, manufacturer = "Bus_Volvo"},
-                    new Transmission() {type = "Auto",   gear = 5,  manufacturer = "Bus_Mersedes"},
-
-                    new Transmission() {type = "Auto",   gear = 1, manufacturer = "Scooter_Urban"},
-                    new Transmission() {type = "Auto",   gear = 1, manufacturer = "Scooter_Xiaomi"},
-                    new Transmission() {type = "Auto",   gear = 4, manufacturer = "Scooter_Racer"},
-                    new Transmission() {type = "Auto",   gear = 2, manufacturer = "Scooter_Yamaha"},
-                    new Transmission() {type = "Auto",   gear = 3, manufacturer = "Scooter_Honda"}
-
+                    new Transmission() {Type = "Manual", Gear = 5, Manufacturer = "Car_VW Golf 4"},
+                    new Transmission() {Type = "Manual", Gear = 5, Manufacturer = "Car_Honda Civic"},
+                    new Transmission() {Type = "Auto",   Gear = 6, Manufacturer = "Car_Honda Accord"},
+                    new Transmission() {Type = "Manual", Gear = 6, Manufacturer = "Car_Acura RSX"},
+                    new Transmission() {Type = "Auto",   Gear = 5, Manufacturer = "Car_Jeep Liberty"},
+                    new Transmission() {Type = "Manual", Gear = 6, Manufacturer = "Lorry_Kamaz"},
+                    new Transmission() {Type = "Auto",   Gear = 7, Manufacturer = "Lorry_Man"},
+                    new Transmission() {Type = "Auto",   Gear = 7, Manufacturer = "Lorry_Mersedes"},
+                    new Transmission() {Type = "Manual", Gear = 6, Manufacturer = "Lorry_Renaught"},
+                    new Transmission() {Type = "Manual", Gear = 5, Manufacturer = "Lorry_Volvo"},
+                    new Transmission() {Type = "Manual", Gear = 5, Manufacturer = "Bus_Liaz"},
+                    new Transmission() {Type = "Manual", Gear = 5, Manufacturer = "Bus_Scania"},
+                    new Transmission() {Type = "Auto",   Gear = 6, Manufacturer = "Bus_Man"},
+                    new Transmission() {Type = "Manual", Gear = 6, Manufacturer = "Bus_Volvo"},
+                    new Transmission() {Type = "Auto",   Gear = 5,  Manufacturer = "Bus_Mersedes"},
+                    new Transmission() {Type = "Auto",   Gear = 1, Manufacturer = "Scooter_Urban"},
+                    new Transmission() {Type = "Auto",   Gear = 1, Manufacturer = "Scooter_Xiaomi"},
+                    new Transmission() {Type = "Auto",   Gear = 4, Manufacturer = "Scooter_Racer"},
+                    new Transmission() {Type = "Auto",   Gear = 2, Manufacturer = "Scooter_Yamaha"},
+                    new Transmission() {Type = "Auto",   Gear = 3, Manufacturer = "Scooter_Honda"}
                 };
 
             var theAutos = new List<Auto>()
                 {
-                    new Auto() {type = "Car_VW Golf 4",    year = 2005},
-                    new Auto() {type = "Car_Honda Civic",  year = 2010},
-                    new Auto() {type = "Car_Honda Accord", year = 2021},
-                    new Auto() {type = "Car_Acura RSX",    year = 2020},
-                    new Auto() {type = "Car_Jeep Liberty", year = 1995},
-                    
-                    new Auto() {type = "Lorry_Kamaz",    year = 1997},
-                    new Auto() {type = "Lorry_Man",      year = 2019},
-                    new Auto() {type = "Lorry_Mersedes", year = 2015},
-                    new Auto() {type = "Lorry_Renaught", year = 2011},
-                    new Auto() {type = "Lorry_Volvo",    year = 2022},
-
-                    new Auto() {type = "Bus_Liaz",     year = 1991},
-                    new Auto() {type = "Bus_Scania",   year = 1998},
-                    new Auto() {type = "Bus_Man",      year = 2009},
-                    new Auto() {type = "Bus_Volvo",    year = 2021},
-                    new Auto() {type = "Bus_Mersedes", year = 2022},
-
-                    new Auto() {type = "Scooter_Urban",  year = 2021},
-                    new Auto() {type = "Scooter_Xiaomi", year = 2022},
-                    new Auto() {type = "Scooter_Racer",  year = 2022},
-                    new Auto() {type = "Scooter_Yamaha", year = 2020},
-                    new Auto() {type = "Scooter_Honda",  year = 2021}
-
+                    new Auto() {Type = "Car_VW Golf 4",    Year = 2005},
+                    new Auto() {Type = "Car_Honda Civic",  Year = 2010},
+                    new Auto() {Type = "Car_Honda Accord", Year = 2021},
+                    new Auto() {Type = "Car_Acura RSX",    Year = 2020},
+                    new Auto() {Type = "Car_Jeep Liberty", Year = 1995},
+                    new Auto() {Type = "Lorry_Kamaz",    Year = 1997},
+                    new Auto() {Type = "Lorry_Man",      Year = 2019},
+                    new Auto() {Type = "Lorry_Mersedes", Year = 2015},
+                    new Auto() {Type = "Lorry_Renaught", Year = 2011},
+                    new Auto() {Type = "Lorry_Volvo",    Year = 2022},
+                    new Auto() {Type = "Bus_Liaz",     Year = 1991},
+                    new Auto() {Type = "Bus_Scania",   Year = 1998},
+                    new Auto() {Type = "Bus_Man",      Year = 2009},
+                    new Auto() {Type = "Bus_Volvo",    Year = 2021},
+                    new Auto() {Type = "Bus_Mersedes", Year = 2022},
+                    new Auto() {Type = "Scooter_Urban",  Year = 2021},
+                    new Auto() {Type = "Scooter_Xiaomi", Year = 2022},
+                    new Auto() {Type = "Scooter_Racer",  Year = 2022},
+                    new Auto() {Type = "Scooter_Yamaha", Year = 2020},
+                    new Auto() {Type = "Scooter_Honda",  Year = 2021}
                 };
             
             // Collect all autos information in one collection
             var autos = from auto in theAutos
-                        join engine in theEngines on auto.type equals engine.type
-                        join chassises in theChassises on auto.type equals chassises.type
-                        join transmission in theTransmissions on auto.type equals transmission.manufacturer
+                        join engine in theEngines on auto.Type equals engine.Type
+                        join chassises in theChassises on auto.Type equals chassises.Type
+                        join transmission in theTransmissions on auto.Type equals transmission.Manufacturer
 
-                        select new {Type = auto.type, Year = auto.year, 
-                            Power = engine.power, Volume = engine.volume, EngineNumber = engine.numberEngine,
-                            Wheel = chassises.wheel, Number = chassises.numberChassis, Load = chassises.load, 
-                            TrasnmissionType = transmission.type, Gear = transmission.gear, Manufacturer = transmission.manufacturer };
+                        select new {Type = auto.Type, Year = auto.Year, 
+                            Power = engine.Power, Volume = engine.Volume, EngineNumber = engine.NumberEngine,
+                            Wheel = chassises.Wheel, Number = chassises.NumberChassis, Load = chassises.Load, 
+                            TrasnmissionType = transmission.Type, Gear = transmission.Gear, Manufacturer = transmission.Manufacturer };
 
             //Start first xml document 
             Console.WriteLine("\n***1. List of Vehicles(full information) with Engine Volume more than 1.5 litres ***\n");
@@ -150,8 +136,8 @@ namespace EpamAutoPark
                 XElement vehicle = new XElement("vehicles");
                 
                 //Add attributes
-                vehicle.Add(new XAttribute("type", auto.Type));
-                vehicle.Add(new XAttribute("year", auto.Year));
+                vehicle.Add(new XAttribute("Type", auto.Type));
+                vehicle.Add(new XAttribute("Year", auto.Year));
 
                 // Engine  INFO:
                 string engineData = "<info>Engine  INFO:</info>";
@@ -159,14 +145,14 @@ namespace EpamAutoPark
                 vehicle.Add(engineInfo);
 
                 //Add element Power
-                XElement power = new XElement("power");
-                power.Value = auto.Power.ToString();
-                vehicle.Add(power);
+                XElement Power = new XElement("Power");
+                Power.Value = auto.Power.ToString();
+                vehicle.Add(Power);
 
                 //Add element Volume
-                XElement volume = new XElement("volume");
-                volume.Value = auto.Volume.ToString();
-                vehicle.Add(volume);
+                XElement Volume = new XElement("Volume");
+                Volume.Value = auto.Volume.ToString();
+                vehicle.Add(Volume);
 
                 //Add element EngineNumber
                 XElement engineNumber = new XElement("enginenumber");
@@ -179,9 +165,9 @@ namespace EpamAutoPark
                 vehicle.Add(chassisInfo);
 
                 //Add element Wheel
-                XElement wheel = new XElement("wheel");
-                wheel.Value = auto.Wheel.ToString();
-                vehicle.Add(wheel);
+                XElement Wheel = new XElement("Wheel");
+                Wheel.Value = auto.Wheel.ToString();
+                vehicle.Add(Wheel);
 
                 //Add element Number
                 XElement number = new XElement("number");
@@ -189,9 +175,9 @@ namespace EpamAutoPark
                 vehicle.Add(number);
 
                 //Add element Load
-                XElement load = new XElement("load");
-                load.Value = auto.Load.ToString();
-                vehicle.Add(load);
+                XElement Load = new XElement("Load");
+                Load.Value = auto.Load.ToString();
+                vehicle.Add(Load);
 
                 // Transmission INFO:
                 string transmissionData = "<info>Transmission INFO:</info>";
@@ -204,18 +190,18 @@ namespace EpamAutoPark
                 vehicle.Add(trasnmissionType);
 
                 //Add element Gear
-                XElement gear = new XElement("gear");
-                gear.Value = auto.Gear.ToString();
-                vehicle.Add(gear);
+                XElement Gear = new XElement("Gear");
+                Gear.Value = auto.Gear.ToString();
+                vehicle.Add(Gear);
 
                 //Add element Manufacturer
-                XElement manufacturer = new XElement("manufacturer");
-                manufacturer.Value = auto.Manufacturer;
-                vehicle.Add(manufacturer);
+                XElement Manufacturer = new XElement("Manufacturer");
+                Manufacturer.Value = auto.Manufacturer;
+                vehicle.Add(Manufacturer);
 
                 vehiclesBigEngine.Root.Add(vehicle);
 
-                Console.WriteLine($"  Vehicle Type: {auto.Type} - {auto.Year} year:" +
+                Console.WriteLine($"  Vehicle Type: {auto.Type} - {auto.Year} Year:" +
                     $"\nEngine  INFO:\t   *Power*: {auto.Power}\t\t *Volume*: {auto.Volume}\t\t *Serial Number*: {auto.EngineNumber}\t" +
                     $"\nСhassis INFO:\t   *Wheel*: {auto.Wheel}\t\t *Number*: {auto.Number}\t *Load*: {auto.Load}\t " +
                     $"\nTransmission INFO: *Type* : {auto.TrasnmissionType}\t *Have Gears*: {auto.Gear}\t *Manufacturer*: {auto.Manufacturer}\t \n");
@@ -243,8 +229,8 @@ namespace EpamAutoPark
                 XElement vehicle = new XElement("vehicles");
 
                 //Add attributes
-                vehicle.Add(new XAttribute("type", auto.Type));
-                vehicle.Add(new XAttribute("year", auto.Year));
+                vehicle.Add(new XAttribute("Type", auto.Type));
+                vehicle.Add(new XAttribute("Year", auto.Year));
 
                 // Engine  INFO:
                 string engineData = "<info>Engine  INFO:</info>";
@@ -252,14 +238,14 @@ namespace EpamAutoPark
                 vehicle.Add(engineInfo);
 
                 //Add element Power
-                XElement power = new XElement("power");
-                power.Value = auto.Power.ToString();
-                vehicle.Add(power);
+                XElement Power = new XElement("Power");
+                Power.Value = auto.Power.ToString();
+                vehicle.Add(Power);
 
                 //Add element Volume
-                XElement volume = new XElement("volume");
-                volume.Value = auto.Volume.ToString();
-                vehicle.Add(volume);
+                XElement Volume = new XElement("Volume");
+                Volume.Value = auto.Volume.ToString();
+                vehicle.Add(Volume);
 
                 //Add element EngineNumber
                 XElement engineNumber = new XElement("enginenumber");
@@ -268,7 +254,7 @@ namespace EpamAutoPark
 
                 engineLorryBus.Root.Add(vehicle);
 
-                Console.WriteLine($"  Vehicle Type: {auto.Type} - {auto.Year} year:" +
+                Console.WriteLine($"  Vehicle Type: {auto.Type} - {auto.Year} Year:" +
                     $"\nEngine  INFO:\t   *Power*: {auto.Power}\t\t *Volume*: {auto.Volume}\t\t *Serial Number*: {auto.EngineNumber}\t\n");
             }
 
@@ -294,8 +280,8 @@ namespace EpamAutoPark
                 XElement vehicle = new XElement("vehicles");
 
                 //Add attributes
-                vehicle.Add(new XAttribute("type", auto.Type));
-                vehicle.Add(new XAttribute("year", auto.Year));
+                vehicle.Add(new XAttribute("Type", auto.Type));
+                vehicle.Add(new XAttribute("Year", auto.Year));
 
                 // Engine  INFO:
                 string engineData = "<info>Engine  INFO:</info>";
@@ -303,14 +289,14 @@ namespace EpamAutoPark
                 vehicle.Add(engineInfo);
 
                 //Add element Power
-                XElement power = new XElement("power");
-                power.Value = auto.Power.ToString();
-                vehicle.Add(power);
+                XElement Power = new XElement("Power");
+                Power.Value = auto.Power.ToString();
+                vehicle.Add(Power);
 
                 //Add element Volume
-                XElement volume = new XElement("volume");
-                volume.Value = auto.Volume.ToString();
-                vehicle.Add(volume);
+                XElement Volume = new XElement("Volume");
+                Volume.Value = auto.Volume.ToString();
+                vehicle.Add(Volume);
 
                 //Add element EngineNumber
                 XElement engineNumber = new XElement("enginenumber");
@@ -323,9 +309,9 @@ namespace EpamAutoPark
                 vehicle.Add(chassisInfo);
 
                 //Add element Wheel
-                XElement wheel = new XElement("wheel");
-                wheel.Value = auto.Wheel.ToString();
-                vehicle.Add(wheel);
+                XElement Wheel = new XElement("Wheel");
+                Wheel.Value = auto.Wheel.ToString();
+                vehicle.Add(Wheel);
 
                 //Add element Number
                 XElement number = new XElement("number");
@@ -333,9 +319,9 @@ namespace EpamAutoPark
                 vehicle.Add(number);
 
                 //Add element Load
-                XElement load = new XElement("load");
-                load.Value = auto.Load.ToString();
-                vehicle.Add(load);
+                XElement Load = new XElement("Load");
+                Load.Value = auto.Load.ToString();
+                vehicle.Add(Load);
 
                 // Transmission INFO:
                 string transmissionData = "<info>Transmission INFO:</info>";
@@ -348,18 +334,18 @@ namespace EpamAutoPark
                 vehicle.Add(trasnmissionType);
 
                 //Add element Gear
-                XElement gear = new XElement("gear");
-                gear.Value = auto.Gear.ToString();
-                vehicle.Add(gear);
+                XElement Gear = new XElement("Gear");
+                Gear.Value = auto.Gear.ToString();
+                vehicle.Add(Gear);
 
                 //Add element Manufacturer
-                XElement manufacturer = new XElement("manufacturer");
-                manufacturer.Value = auto.Manufacturer;
-                vehicle.Add(manufacturer);
+                XElement Manufacturer = new XElement("Manufacturer");
+                Manufacturer.Value = auto.Manufacturer;
+                vehicle.Add(Manufacturer);
 
                 transmissionSorter.Root.Add(vehicle);
 
-                Console.WriteLine($"  Vehicle Type: {auto.Type} - {auto.Year} year \tAND *Trasnmission Type* : ***{auto.TrasnmissionType}***" +
+                Console.WriteLine($"  Vehicle Type: {auto.Type} - {auto.Year} Year \tAND *Trasnmission Type* : ***{auto.TrasnmissionType}***" +
                     $"\nEngine  INFO:\t   *Power*: {auto.Power}\t\t *Volume*: {auto.Volume}\t\t *Serial Number*: {auto.EngineNumber}\t" +
                     $"\nСhassis INFO:\t   *Wheel*: {auto.Wheel}\t\t *Number*: {auto.Number}\t *Load*: {auto.Load}\t " +
                     $"\nTransmission INFO: *Type* : {auto.TrasnmissionType}\t *Have Gears*: {auto.Gear}\t *Manufacturer*: {auto.Manufacturer}\t \n");

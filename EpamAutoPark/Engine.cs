@@ -9,10 +9,10 @@ namespace EpamAutoPark
 {
     class Engine
     {
-        public int power { get; set; }
-        public double volume { get; set; }
-        public string type { get; set; }
-        public string numberEngine { get; set; }
+        public int Power { get; set; }
+        public double Volume { get; set; }
+        public string Type { get; set; }
+        public string NumberEngine { get; set; }
         
     }
 }

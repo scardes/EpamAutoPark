@@ -9,9 +9,9 @@ namespace EpamAutoPark
 {
     class Transmission
     {
-        public int gear { get; set; }
-        public string type { get; set; }
-        public string manufacturer { get; set; }
+        public int Gear { get; set; }
+        public string Type { get; set; }
+        public string Manufacturer { get; set; }
 
     }
 }
