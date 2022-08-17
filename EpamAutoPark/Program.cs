@@ -114,7 +114,6 @@ namespace EpamAutoPark
                         join engine in theEngines on auto.Type equals engine.Type
                         join chassises in theChassises on auto.Type equals chassises.Type
                         join transmission in theTransmissions on auto.Type equals transmission.Manufacturer
-
                         select new {Type = auto.Type, Year = auto.Year, 
                             Power = engine.Power, Volume = engine.Volume, EngineNumber = engine.NumberEngine,
                             Wheel = chassises.Wheel, Number = chassises.NumberChassis, Load = chassises.Load, 
@@ -138,62 +137,50 @@ namespace EpamAutoPark
                 //Add attributes
                 vehicle.Add(new XAttribute("Type", auto.Type));
                 vehicle.Add(new XAttribute("Year", auto.Year));
-
                 // Engine  INFO:
                 string engineData = "<info>Engine  INFO:</info>";
                 XElement engineInfo = XElement.Parse(engineData);
                 vehicle.Add(engineInfo);
-
                 //Add element Power
                 XElement Power = new XElement("Power");
                 Power.Value = auto.Power.ToString();
                 vehicle.Add(Power);
-
                 //Add element Volume
                 XElement Volume = new XElement("Volume");
                 Volume.Value = auto.Volume.ToString();
                 vehicle.Add(Volume);
-
                 //Add element EngineNumber
                 XElement engineNumber = new XElement("enginenumber");
                 engineNumber.Value = auto.EngineNumber;
                 vehicle.Add(engineNumber);
-
                 // Сhassis INFO:
                 string chassisData = "<info>Сhassis  INFO:</info>";
                 XElement chassisInfo = XElement.Parse(chassisData);
                 vehicle.Add(chassisInfo);
-
                 //Add element Wheel
                 XElement Wheel = new XElement("Wheel");
                 Wheel.Value = auto.Wheel.ToString();
                 vehicle.Add(Wheel);
-
                 //Add element Number
                 XElement number = new XElement("number");
                 number.Value = auto.Number;
                 vehicle.Add(number);
-
                 //Add element Load
                 XElement Load = new XElement("Load");
                 Load.Value = auto.Load.ToString();
                 vehicle.Add(Load);
-
                 // Transmission INFO:
                 string transmissionData = "<info>Transmission INFO:</info>";
                 XElement transmissionInfo = XElement.Parse(transmissionData);
                 vehicle.Add(transmissionInfo);
-
                 //Add element TrasnmissionType
                 XElement trasnmissionType = new XElement("trasnmissionType");
                 trasnmissionType.Value = auto.TrasnmissionType;
                 vehicle.Add(trasnmissionType);
-
                 //Add element Gear
                 XElement Gear = new XElement("Gear");
                 Gear.Value = auto.Gear.ToString();
                 vehicle.Add(Gear);
-
                 //Add element Manufacturer
                 XElement Manufacturer = new XElement("Manufacturer");
                 Manufacturer.Value = auto.Manufacturer;
@@ -210,7 +197,6 @@ namespace EpamAutoPark
             //Save our document in xml
             vehiclesBigEngine.Save("VehiclesBigEngine.xml");
 
-            Console.WriteLine("***1. Vehicles(full information) with Engine Volume more than 1.5 litres ***");
             Console.WriteLine("***1. Saved in XML file: VehiclesBigEngine.xml ***\n");
 
             //Start second xml document 
@@ -231,22 +217,18 @@ namespace EpamAutoPark
                 //Add attributes
                 vehicle.Add(new XAttribute("Type", auto.Type));
                 vehicle.Add(new XAttribute("Year", auto.Year));
-
                 // Engine  INFO:
                 string engineData = "<info>Engine  INFO:</info>";
                 XElement engineInfo = XElement.Parse(engineData);
                 vehicle.Add(engineInfo);
-
                 //Add element Power
                 XElement Power = new XElement("Power");
                 Power.Value = auto.Power.ToString();
                 vehicle.Add(Power);
-
                 //Add element Volume
                 XElement Volume = new XElement("Volume");
                 Volume.Value = auto.Volume.ToString();
                 vehicle.Add(Volume);
-
                 //Add element EngineNumber
                 XElement engineNumber = new XElement("enginenumber");
                 engineNumber.Value = auto.EngineNumber;
@@ -261,7 +243,6 @@ namespace EpamAutoPark
             //Save our document in xml
             engineLorryBus.Save("EnginesLorryBus.xml");
 
-            Console.WriteLine("***2. Engine Information of lorries and buses ***");
             Console.WriteLine("***2. Saved in XML file: EnginesLorryBus.xml ***\n");
 
             //Start third xml document 
@@ -282,62 +263,50 @@ namespace EpamAutoPark
                 //Add attributes
                 vehicle.Add(new XAttribute("Type", auto.Type));
                 vehicle.Add(new XAttribute("Year", auto.Year));
-
                 // Engine  INFO:
                 string engineData = "<info>Engine  INFO:</info>";
                 XElement engineInfo = XElement.Parse(engineData);
                 vehicle.Add(engineInfo);
-
                 //Add element Power
                 XElement Power = new XElement("Power");
                 Power.Value = auto.Power.ToString();
                 vehicle.Add(Power);
-
                 //Add element Volume
                 XElement Volume = new XElement("Volume");
                 Volume.Value = auto.Volume.ToString();
                 vehicle.Add(Volume);
-
                 //Add element EngineNumber
                 XElement engineNumber = new XElement("enginenumber");
                 engineNumber.Value = auto.EngineNumber;
                 vehicle.Add(engineNumber);
-
                 // Сhassis INFO:
                 string chassisData = "<info>Сhassis  INFO:</info>";
                 XElement chassisInfo = XElement.Parse(chassisData);
                 vehicle.Add(chassisInfo);
-
                 //Add element Wheel
                 XElement Wheel = new XElement("Wheel");
                 Wheel.Value = auto.Wheel.ToString();
                 vehicle.Add(Wheel);
-
                 //Add element Number
                 XElement number = new XElement("number");
                 number.Value = auto.Number;
                 vehicle.Add(number);
-
                 //Add element Load
                 XElement Load = new XElement("Load");
                 Load.Value = auto.Load.ToString();
                 vehicle.Add(Load);
-
                 // Transmission INFO:
                 string transmissionData = "<info>Transmission INFO:</info>";
                 XElement transmissionInfo = XElement.Parse(transmissionData);
                 vehicle.Add(transmissionInfo);
-
                 //Add element TrasnmissionType
                 XElement trasnmissionType = new XElement("trasnmissionType");
                 trasnmissionType.Value = auto.TrasnmissionType;
                 vehicle.Add(trasnmissionType);
-
                 //Add element Gear
                 XElement Gear = new XElement("Gear");
                 Gear.Value = auto.Gear.ToString();
                 vehicle.Add(Gear);
-
                 //Add element Manufacturer
                 XElement Manufacturer = new XElement("Manufacturer");
                 Manufacturer.Value = auto.Manufacturer;
@@ -354,9 +323,7 @@ namespace EpamAutoPark
             //Save our document in xml
             transmissionSorter.Save("TransmissionSorter.xml");
 
-            Console.WriteLine("***3. Vehicles(full information) with group by TrasnmissionType ***");
             Console.WriteLine("***3. Saved in XML file: TransmissionSorter.xml ***\n");
-
             Console.ReadLine(); // Frendly exit
         }
     }
