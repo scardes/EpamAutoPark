@@ -5,7 +5,7 @@
 /// </summary>
 namespace EpamAutoPark
 {
-    class Engine
+    public class Engine
     {
         int power = 0;
         double volume = 0;

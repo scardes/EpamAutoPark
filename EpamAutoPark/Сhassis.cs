@@ -5,7 +5,7 @@
 /// </summary>
 namespace EpamAutoPark
 {
-    class Сhassis 
+    public class Сhassis 
     {
         int wheel = 0;
         double load = 0;

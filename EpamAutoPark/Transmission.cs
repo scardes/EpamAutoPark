@@ -5,7 +5,7 @@
 /// </summary>
 namespace EpamAutoPark
 {
-    class Transmission
+    public class Transmission
     {
         int gear = 0;
         public int Gear

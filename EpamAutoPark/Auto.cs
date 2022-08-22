@@ -5,7 +5,7 @@
 /// </summary>
 namespace EpamAutoPark
 {
-    class Auto
+    public class Auto
     {
         int year = 1900;
         int currentYear = DateTime.Now.Year;
