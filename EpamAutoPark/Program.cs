@@ -374,25 +374,74 @@ namespace EpamAutoPark
             //Exceptions (.NET) 2.AddException. Add new models of cars.
             try
             {
+                var addEngines = new List<Engine>()
+                {
+                    new Engine() { Power = 80,  Volume = 1.1, Type = "Car_NEW",    NumberEngine = "Car_015"},
+                    new Engine() { Power = 500, Volume = 6,   Type = "Lorry_NEW",      NumberEngine = "Lorry_060"},
+                    new Engine() { Power = 520, Volume = 6.4, Type = "Bus_NEW",     NumberEngine = "Bus_064"},
+                    new Engine() { Power = 140, Volume = 1.1, Type = "Scooter_NEW",  NumberEngine = "Scooter_011"}
+                };
+
+                var addChassises = new List<Сhassis>()
+                {
+                    new Сhassis() { Type = "Car_NEW",    Wheel = 4, NumberChassis = "CRWG_448", Load = 2400},
+                    new Сhassis() { Type = "Lorry_NEW",    Wheel = 6, NumberChassis = "LK_655", Load = 5400},
+                    new Сhassis() { Type = "Bus_NEW",      Wheel = 4, NumberChassis = "BSL_03K0", Load = 4400},
+                    new Сhassis() { Type = "Scooter_NEW",  Wheel = 2, NumberChassis = "SC00H23", Load = 2300}
+                };
+
+                var addTransmissions = new List<Transmission>()
+                {
+                    new Transmission() {Type = "Manual", Gear = 5, Manufacturer = "Car_NEW"},
+                    new Transmission() {Type = "Manual", Gear = 6, Manufacturer = "Lorry_NEW"},
+                    new Transmission() {Type = "Manual", Gear = 5, Manufacturer = "Bus_NEW"},
+                    new Transmission() {Type = "Auto",   Gear = 3, Manufacturer = "Scooter_NEW"}
+                };
+
                 var addAutos = new List<Auto>()
                 {
-                    new Auto() {Type = "Car_VW NEW",    Year = 2005},
-                    new Auto() {Type = "Car_Honda NEW",  Year = 2010},
+                    new Auto() {Type = "Car_NEW",    Year = 2005},
                     new Auto() {Type = "Lorry_NEW",      Year = 2009},
                     new Auto() {Type = "Bus_NEW",    Year = 2021},
                     new Auto() {Type = "Scooter_NEW",  Year = 2021}
                 };
 
-                Console.WriteLine("\nNEW CAR List:\n");
-
+                //Add new cars in List
+                theEngines.AddRange(addEngines);
+                theChassises.AddRange(addChassises);
+                theTransmissions.AddRange(addTransmissions);
                 theAutos.AddRange(addAutos);
 
-                foreach (Auto theAuto in theAutos)
-                {
-                    theAuto.PrintAuto();
-                }
+                var newAutos = from auto in theAutos
+                               join engine in theEngines on auto.Type equals engine.Type
+                               join chassises in theChassises on auto.Type equals chassises.Type
+                               join transmission in theTransmissions on auto.Type equals transmission.Manufacturer
+                               select new
+                               {
+                                   Type = auto.Type,
+                                   Year = auto.Year,
+                                   Power = engine.Power,
+                                   Volume = engine.Volume,
+                                   EngineNumber = engine.NumberEngine,
+                                   Wheel = chassises.Wheel,
+                                   Number = chassises.NumberChassis,
+                                   Load = chassises.Load,
+                                   TrasnmissionType = transmission.Type,
+                                   Gear = transmission.Gear,
+                                   Manufacturer = transmission.Manufacturer
+                               };
 
+                Console.WriteLine("\n\n\t\t\t\tNEW CAR List:\n");
+
+                foreach (var auto in newAutos)
+                {
+                    Console.WriteLine($"  Vehicle Type: {auto.Type} - {auto.Year} Year:" +
+                        $"\nEngine  INFO:\t   *Power*: {auto.Power}\t\t *Volume*: {auto.Volume}\t\t *Serial Number*: {auto.EngineNumber}\t" +
+                        $"\nСhassis INFO:\t   *Wheel*: {auto.Wheel}\t\t *Number*: {auto.Number}\t *Load*: {auto.Load}\t " +
+                        $"\nTransmission INFO: *Type* : {auto.TrasnmissionType}\t *Have Gears*: {auto.Gear}\t *Manufacturer*: {auto.Manufacturer}\t \n");
+                }
             }
+
             catch
             {
                 Console.WriteLine("AddException. Please correct *new cars* information and try again!");
