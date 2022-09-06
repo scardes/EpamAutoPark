@@ -343,15 +343,43 @@ namespace EpamAutoPark
                 Console.WriteLine("InitializationException. Please correct input data and try again!");
             }
 
-            //Start new part for "Exceptions (.NET)"
-
+            //Exceptions (.NET) 2.AddException. Add new models of cars.
             try
             {
-                Auto addAuto = new Auto() { Type = "Lorry_New", Year = 1997 };
-                Console.WriteLine("Add success");
+                var addAutos = new List<Auto>()
+                {
+                    new Auto() {Type = "Car_VW NEW",    Year = 2005},
+                    new Auto() {Type = "Car_Honda NEW",  Year = 2010},
+                    new Auto() {Type = "Lorry_NEW",      Year = 2009},
+                    new Auto() {Type = "Bus_NEW",    Year = 2021},
+                    new Auto() {Type = "Scooter_NEW",  Year = 2021}
+                };
+
+                Console.WriteLine("\nNEW CAR List:\n");
+
+                theAutos.AddRange(addAutos);
+
+                foreach (Auto theAuto in theAutos)
+                {
+                    theAuto.PrintAuto();
+                }
 
             }
             catch
+            {
+                Console.WriteLine("AddException. Please correct *new cars* information and try again!");
+            }
+
+            //Exceptions (.NET) 3.GetAutoByParameterException
+            try
+            {
+
+            }
+            catch
+            {
+
+            }
+            finally
             {
 
             }
