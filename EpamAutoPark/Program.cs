@@ -452,9 +452,7 @@ namespace EpamAutoPark
             getAutoByParameter("Year", "2020");
             getAutoByParameter("WrongParam", "777");
 
-            //Exceptions (.NET) 4. UpdateAutoException
-
-            Console.WriteLine("Exceptions (.NET) 4.UpdateAutoException");
+            //Exceptions (.NET) 4.UpdateAutoException
             try
             {
                 theAutos.Where(w => w.Type == "Car_NEW").ToList().ForEach(s => s.Year = 1999);
@@ -463,6 +461,7 @@ namespace EpamAutoPark
                              where se.Type == "Car_NEW"
                              select se;
 
+                Console.WriteLine("Update Type = Car_NEW -> Success\n");
                 foreach (var auto in update)
                 {
                     Console.WriteLine($"  Vehicle Type: {auto.Type} - {auto.Year} Year:" +
@@ -470,11 +469,33 @@ namespace EpamAutoPark
                         $"\nСhassis INFO:\t   *Wheel*: {auto.Wheel}\t\t *Number*: {auto.Number}\t *Load*: {auto.Load}\t " +
                         $"\nTransmission INFO: *Type* : {auto.TrasnmissionType}\t *Have Gears*: {auto.Gear}\t *Manufacturer*: {auto.Manufacturer}\t \n");
                 }
-
             }
             catch
             {
                 Console.WriteLine("UpdateAutoException. Please input correct *update* information and try again! ");
+            }
+
+            //Exceptions (.NET) 5.RemoveAutoException
+            try
+            {
+                theAutos.RemoveAll(p => p.Type == "Scooter_Yamaha");
+
+                var remove = from se in autos
+                             where se.Year == 2020
+                             select se;
+
+                Console.WriteLine("Remove Type = Scooter_Yamaha -> Success\n");
+                foreach (var auto in remove)
+                {
+                    Console.WriteLine($"  Vehicle Type: {auto.Type} - {auto.Year} Year:" +
+                        $"\nEngine  INFO:\t   *Power*: {auto.Power}\t\t *Volume*: {auto.Volume}\t\t *Serial Number*: {auto.EngineNumber}\t" +
+                        $"\nСhassis INFO:\t   *Wheel*: {auto.Wheel}\t\t *Number*: {auto.Number}\t *Load*: {auto.Load}\t " +
+                        $"\nTransmission INFO: *Type* : {auto.TrasnmissionType}\t *Have Gears*: {auto.Gear}\t *Manufacturer*: {auto.Manufacturer}\t \n");
+                }
+            }
+            catch
+            {
+                Console.WriteLine("RemoveAutoException. Please input correct *remove* information and try again! ");
             }
 
             //Function with GetAutoByParameterException for Exceptions (.NET)
