@@ -448,16 +448,46 @@ namespace EpamAutoPark
             }
 
             //Exceptions (.NET) 3.GetAutoByParameterException
-            try
-            {
+            getAutoByParameter("Type", "Bus_Mersedes");
+            getAutoByParameter("Year", "2020");
 
-            }
-            catch
+            //Function with GetAutoByParameterException for Exceptions (.NET)
+            void getAutoByParameter(string parameter, string value)
             {
+                Console.WriteLine($"\t\t Start searc by *{parameter} = {value}* \n");
 
-            }
-            finally
-            {
+                switch (parameter)
+                {
+                    case "Type":
+                        var searchType = from se in autos
+                                        where se.Type == value
+                                         select se;
+
+                        foreach (var auto in searchType)
+                        {
+                            Console.WriteLine($"  Vehicle Type: {auto.Type} - {auto.Year} Year:" +
+                                $"\nEngine  INFO:\t   *Power*: {auto.Power}\t\t *Volume*: {auto.Volume}\t\t *Serial Number*: {auto.EngineNumber}\t" +
+                                $"\nСhassis INFO:\t   *Wheel*: {auto.Wheel}\t\t *Number*: {auto.Number}\t *Load*: {auto.Load}\t " +
+                                $"\nTransmission INFO: *Type* : {auto.TrasnmissionType}\t *Have Gears*: {auto.Gear}\t *Manufacturer*: {auto.Manufacturer}\t \n");
+                        }
+                        break;
+                    case "Year":
+                        var searchYear = from se in autos
+                                         where se.Year == Int32.Parse(value)
+                                         select se;
+
+                        foreach (var auto in searchYear)
+                        {
+                            Console.WriteLine($"  Vehicle Type: {auto.Type} - {auto.Year} Year:" +
+                                $"\nEngine  INFO:\t   *Power*: {auto.Power}\t\t *Volume*: {auto.Volume}\t\t *Serial Number*: {auto.EngineNumber}\t" +
+                                $"\nСhassis INFO:\t   *Wheel*: {auto.Wheel}\t\t *Number*: {auto.Number}\t *Load*: {auto.Load}\t " +
+                                $"\nTransmission INFO: *Type* : {auto.TrasnmissionType}\t *Have Gears*: {auto.Gear}\t *Manufacturer*: {auto.Manufacturer}\t \n");
+                        }
+                        break;
+                    default:
+                        Console.WriteLine("GetAutoByParameterException. Please correct *parametr*  and try again! ");
+                        break;
+                }
 
             }
 
