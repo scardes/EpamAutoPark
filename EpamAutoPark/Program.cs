@@ -477,7 +477,6 @@ namespace EpamAutoPark
                 Console.WriteLine("UpdateAutoException. Please input correct *update* information and try again! ");
             }
 
-
             //Function with GetAutoByParameterException for Exceptions (.NET)
             void getAutoByParameter(string parameter, string value)
             {
