@@ -450,11 +450,38 @@ namespace EpamAutoPark
             //Exceptions (.NET) 3.GetAutoByParameterException
             getAutoByParameter("Type", "Bus_Mersedes");
             getAutoByParameter("Year", "2020");
+            getAutoByParameter("WrongParam", "777");
+
+            //Exceptions (.NET) 4. UpdateAutoException
+
+            Console.WriteLine("Exceptions (.NET) 4.UpdateAutoException");
+            try
+            {
+                theAutos.Where(w => w.Type == "Car_NEW").ToList().ForEach(s => s.Year = 1999);
+
+                var update = from se in autos
+                             where se.Type == "Car_NEW"
+                             select se;
+
+                foreach (var auto in update)
+                {
+                    Console.WriteLine($"  Vehicle Type: {auto.Type} - {auto.Year} Year:" +
+                        $"\nEngine  INFO:\t   *Power*: {auto.Power}\t\t *Volume*: {auto.Volume}\t\t *Serial Number*: {auto.EngineNumber}\t" +
+                        $"\nСhassis INFO:\t   *Wheel*: {auto.Wheel}\t\t *Number*: {auto.Number}\t *Load*: {auto.Load}\t " +
+                        $"\nTransmission INFO: *Type* : {auto.TrasnmissionType}\t *Have Gears*: {auto.Gear}\t *Manufacturer*: {auto.Manufacturer}\t \n");
+                }
+
+            }
+            catch
+            {
+                Console.WriteLine("UpdateAutoException. Please input correct *update* information and try again! ");
+            }
+
 
             //Function with GetAutoByParameterException for Exceptions (.NET)
             void getAutoByParameter(string parameter, string value)
             {
-                Console.WriteLine($"\t\t Start searc by *{parameter} = {value}* \n");
+                Console.WriteLine($"\t\t Start search by *{parameter} = {value}* \n");
 
                 switch (parameter)
                 {
@@ -485,10 +512,9 @@ namespace EpamAutoPark
                         }
                         break;
                     default:
-                        Console.WriteLine("GetAutoByParameterException. Please correct *parametr*  and try again! ");
+                        Console.WriteLine("GetAutoByParameterException. Please correct *parametr* and try again! ");
                         break;
                 }
-
             }
 
             Console.ReadLine(); // Frendly exit
